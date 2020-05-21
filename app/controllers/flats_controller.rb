@@ -5,7 +5,8 @@ class FlatsController < ApplicationController
     if params[:query].nil?
       @flats = Flat.all
     else
-      @flats = Flat.where("name LIKE '%#{params[:query]}%'")
+      sql_query = "name LIKE :query OR address LIKE :query"
+      @flats = Flat.where(sql_query, query: "%#{params[:query]}%")
     end
   end
 
