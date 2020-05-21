@@ -17,7 +17,7 @@
 <div class="row">
 
   <% @flats.each do |flat| %>
-  <% flat_image = "https://source.unsplash.com/random/?#{rand(0..99)}" || @flat.image_url %>
+  <% flat_image = flat.image_url || "https://source.unsplash.com/random/?#{rand(0..99)}" %>
     <div class="col-4">
       <div class="flat-card">
         <div class="flat-card-image" style="background-image: url(<%= "'#{flat_image}'" %>)"></div>

@@ -1,4 +1,4 @@
-<% flat_image = "https://source.unsplash.com/random/?home" || @flat.image_url %>
+<% flat_image = @flat.image_url || "https://source.unsplash.com/random/?home"%>
 
 <div class="map" style="background-image: url(<%= "'#{flat_image}'" %>)"></div>
 
